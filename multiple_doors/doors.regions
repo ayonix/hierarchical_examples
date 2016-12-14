@@ -1,0 +1,164 @@
+# This is a region definition file for the LTLMoP toolkit.
+# Format details are described at the beginning of each section below.
+# Note that all values are separated by *tabs*.
+
+Background: # Relative path of background image file
+None
+
+CalibrationPoints: # Vertices to use for map calibration: (vertex_region_name, vertex_index)
+
+Obstacles: # Names of regions to treat as obstacles
+
+Regions: # Stored as JSON string
+[
+    {
+        "name": "boundary", 
+        "color": [
+            255, 
+            128, 
+            0
+        ], 
+        "holeList": [], 
+        "height": 0, 
+        "points": [
+            [
+                32.0, 
+                77.0
+            ], 
+            [
+                59.0, 
+                77.0
+            ], 
+            [
+                59.0, 
+                105.0
+            ], 
+            [
+                85.0, 
+                105.0
+            ], 
+            [
+                85.0, 
+                77.0
+            ], 
+            [
+                85.0, 
+                0.0
+            ], 
+            [
+                0.0, 
+                0.0
+            ], 
+            [
+                0.0, 
+                77.0
+            ], 
+            [
+                0.0, 
+                107.0
+            ], 
+            [
+                32.0, 
+                107.0
+            ]
+        ], 
+        "position": [
+            278.0, 
+            89.0
+        ], 
+        "type": "poly", 
+        "size": [
+            85.0, 
+            107.0
+        ]
+    }, 
+    {
+        "name": "door2", 
+        "color": [
+            255, 
+            128, 
+            0
+        ], 
+        "height": 0.0, 
+        "position": [
+            337.0, 
+            166.0
+        ], 
+        "type": "rect", 
+        "size": [
+            26.0, 
+            28.0
+        ]
+    }, 
+    {
+        "name": "door1", 
+        "color": [
+            255, 
+            128, 
+            0
+        ], 
+        "height": 0.0, 
+        "position": [
+            278.0, 
+            166.0
+        ], 
+        "type": "rect", 
+        "size": [
+            32.0, 
+            30.0
+        ]
+    }, 
+    {
+        "name": "room", 
+        "color": [
+            255, 
+            0, 
+            0
+        ], 
+        "holeList": [], 
+        "height": 0.0, 
+        "points": [
+            [
+                0.0, 
+                0.0
+            ], 
+            [
+                85.0, 
+                0.0
+            ], 
+            [
+                85.0, 
+                77.0
+            ], 
+            [
+                59.0, 
+                77.0
+            ], 
+            [
+                32.0, 
+                77.0
+            ], 
+            [
+                0.0, 
+                77.0
+            ]
+        ], 
+        "position": [
+            278.0, 
+            89.0
+        ], 
+        "type": "poly", 
+        "size": [
+            85.0, 
+            77.0
+        ]
+    }
+]
+
+Transitions: # Region 1 Name, Region 2 Name, Bidirectional transition faces (face1_x1, face1_y1, face1_x2, face1_y2, face2_x1, ...)
+boundary	door2	363.0	194.0	363.0	166.0	337.0	194.0	363.0	194.0	337.0	194.0	337.0	166.0
+boundary	door1	278.0	196.0	278.0	166.0	310.0	196.0	310.0	166.0	278.0	196.0	310.0	196.0
+boundary	room	337.0	166.0	310.0	166.0	363.0	89.0	363.0	166.0	278.0	89.0	278.0	166.0	278.0	89.0	363.0	89.0
+door2	room	337.0	166.0	363.0	166.0
+door1	room	310.0	166.0	278.0	166.0
+

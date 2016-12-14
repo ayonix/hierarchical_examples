@@ -1,0 +1,27 @@
+# base_global_planner: "global_planner/GlobalPlanner"
+base_global_planner: "carrot_planner/CarrotPlanner"
+
+# The radius away from the robot in meters outside which obstacles will be removed from the costmaps when they are reverted to the static map.
+reset_distance: 0.0 #reset everything?
+
+# NavfnROS:
+#   allow_unknown: true #Specifies whether or not to allow navfn to create plans that traverse unknown space, default true
+
+GlobalPlanner:                                  # Also see: http://wiki.ros.org/global_planner
+  default_tolerance: 0.2                        # If goal in obstacle, plan to the closest point in radius default_tolerance, default 0.0
+  lethal_cost: 253                              # default 253
+  neutral_cost: 66                              # default 50
+  cost_factor: 0.55                              # Factor to multiply each cost from costmap by, default 3.0
+  use_dijkstra: true # use A* if false
+
+#cost_scaling_factor and inflation_radius were now moved to the inflation_layer ns
+inflation_layer:
+  enabled:              true 
+  cost_scaling_factor:  5.0  # exponential rate at which the obstacle cost drops off (default: 10)
+  inflation_radius:     0.1  # max. distance from an obstacle at which costs are incurred for planning paths.
+
+DWAPlannerROS:
+  sim_time: 4.0
+  path_distance_bias: 1.0
+  goal_distance_bias: 64.0
+  occdist_scale: 0.5

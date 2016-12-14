@@ -1,0 +1,204 @@
+# This is a region definition file for the LTLMoP toolkit.
+# Format details are described at the beginning of each section below.
+# Note that all values are separated by *tabs*.
+
+Background: # Relative path of background image file
+memory.png
+
+CalibrationPoints: # Vertices to use for map calibration: (vertex_region_name, vertex_index)
+
+Obstacles: # Names of regions to treat as obstacles
+
+Regions: # Stored as JSON string
+[
+    {
+        "name": "boundary", 
+        "color": [
+            0, 
+            0, 
+            255
+        ], 
+        "holeList": [], 
+        "height": 0, 
+        "points": [
+            [
+                561.0, 
+                162.0
+            ], 
+            [
+                560.0, 
+                162.0
+            ], 
+            [
+                560.0, 
+                1.0
+            ], 
+            [
+                281.0, 
+                1.0
+            ], 
+            [
+                281.0, 
+                0.0
+            ], 
+            [
+                0.0, 
+                0.0
+            ], 
+            [
+                0.0, 
+                162.0
+            ], 
+            [
+                0.0, 
+                341.0
+            ], 
+            [
+                281.0, 
+                341.0
+            ], 
+            [
+                561.0, 
+                341.0
+            ]
+        ], 
+        "position": [
+            40.0, 
+            39.0
+        ], 
+        "type": "poly", 
+        "size": [
+            561.0, 
+            341.0
+        ]
+    }, 
+    {
+        "name": "4", 
+        "color": [
+            255, 
+            128, 
+            0
+        ], 
+        "holeList": [], 
+        "height": 0.0, 
+        "points": [
+            [
+                0.0, 
+                0.0
+            ], 
+            [
+                279.0, 
+                0.0
+            ], 
+            [
+                280.0, 
+                0.0
+            ], 
+            [
+                280.0, 
+                179.0
+            ], 
+            [
+                0.0, 
+                179.0
+            ]
+        ], 
+        "position": [
+            321.0, 
+            201.0
+        ], 
+        "type": "poly", 
+        "size": [
+            280.0, 
+            179.0
+        ]
+    }, 
+    {
+        "name": "2", 
+        "color": [
+            255, 
+            0, 
+            255
+        ], 
+        "height": 0.0, 
+        "position": [
+            321.0, 
+            40.0
+        ], 
+        "type": "rect", 
+        "size": [
+            279.0, 
+            161.0
+        ]
+    }, 
+    {
+        "name": "3", 
+        "color": [
+            255, 
+            0, 
+            0
+        ], 
+        "height": 0.0, 
+        "position": [
+            40.0, 
+            201.0
+        ], 
+        "type": "rect", 
+        "size": [
+            281.0, 
+            179.0
+        ]
+    }, 
+    {
+        "name": "1", 
+        "color": [
+            255, 
+            0, 
+            255
+        ], 
+        "holeList": [], 
+        "height": 0.0, 
+        "points": [
+            [
+                0.0, 
+                0.0
+            ], 
+            [
+                281.0, 
+                0.0
+            ], 
+            [
+                281.0, 
+                1.0
+            ], 
+            [
+                281.0, 
+                162.0
+            ], 
+            [
+                0.0, 
+                162.0
+            ]
+        ], 
+        "position": [
+            40.0, 
+            39.0
+        ], 
+        "type": "poly", 
+        "size": [
+            281.0, 
+            162.0
+        ]
+    }
+]
+
+Transitions: # Region 1 Name, Region 2 Name, Bidirectional transition faces (face1_x1, face1_y1, face1_x2, face1_y2, face2_x1, ...)
+boundary	4	600.0	201.0	601.0	201.0	601.0	380.0	321.0	380.0	601.0	201.0	601.0	380.0
+boundary	2	321.0	40.0	600.0	40.0	600.0	201.0	600.0	40.0
+boundary	3	40.0	201.0	40.0	380.0	321.0	380.0	40.0	380.0
+boundary	1	40.0	201.0	40.0	39.0	40.0	39.0	321.0	39.0	321.0	40.0	321.0	39.0
+4	2	600.0	201.0	321.0	201.0
+4	3	321.0	201.0	321.0	380.0
+2	1	321.0	40.0	321.0	201.0
+3	1	40.0	201.0	321.0	201.0
+

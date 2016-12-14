@@ -1,0 +1,6 @@
+*.smv
+*_decomposed.regions
+*.log
+*.aut
+*.ltl
+*.xcf

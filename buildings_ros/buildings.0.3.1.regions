@@ -1,0 +1,221 @@
+# This is a region definition file for the LTLMoP toolkit.
+# Format details are described at the beginning of each section below.
+# Note that all values are separated by *tabs*.
+
+Background: # Relative path of background image file
+buildings.png
+
+CalibrationPoints: # Vertices to use for map calibration: (vertex_region_name, vertex_index)
+boundary	0
+boundary	6
+boundary	10
+
+Obstacles: # Names of regions to treat as obstacles
+
+Regions: # Stored as JSON string
+[
+    {
+        "name": "boundary", 
+        "color": [
+            255, 
+            128, 
+            0
+        ], 
+        "holeList": [], 
+        "height": 0, 
+        "points": [
+            [
+                54.0, 
+                18.0
+            ], 
+            [
+                82.0, 
+                21.0
+            ], 
+            [
+                80.0, 
+                11.0
+            ], 
+            [
+                54.0, 
+                12.0
+            ], 
+            [
+                54.0, 
+                0.0
+            ], 
+            [
+                27.0, 
+                0.0
+            ], 
+            [
+                27.0, 
+                11.0
+            ], 
+            [
+                2.0, 
+                11.0
+            ], 
+            [
+                0.0, 
+                19.0
+            ], 
+            [
+                27.0, 
+                19.0
+            ], 
+            [
+                27.0, 
+                29.0
+            ], 
+            [
+                54.0, 
+                29.0
+            ]
+        ], 
+        "position": [
+            295.0, 
+            76.0
+        ], 
+        "type": "poly", 
+        "size": [
+            82.0, 
+            29.0
+        ]
+    }, 
+    {
+        "name": "exit_1_3_2", 
+        "color": [
+            255, 
+            128, 
+            0
+        ], 
+        "holeList": [], 
+        "height": 0.0, 
+        "points": [
+            [
+                0.0, 
+                7.0
+            ], 
+            [
+                0.0, 
+                1.0
+            ], 
+            [
+                26.0, 
+                0.0
+            ], 
+            [
+                28.0, 
+                10.0
+            ]
+        ], 
+        "position": [
+            349.0, 
+            87.0
+        ], 
+        "type": "poly", 
+        "size": [
+            28.0, 
+            10.0
+        ]
+    }, 
+    {
+        "name": "exit_1_3_1", 
+        "color": [
+            255, 
+            0, 
+            255
+        ], 
+        "holeList": [], 
+        "height": 0.0, 
+        "points": [
+            [
+                27.0, 
+                0.0
+            ], 
+            [
+                27.0, 
+                8.0
+            ], 
+            [
+                0.0, 
+                8.0
+            ], 
+            [
+                2.0, 
+                0.0
+            ]
+        ], 
+        "position": [
+            295.0, 
+            87.0
+        ], 
+        "type": "poly", 
+        "size": [
+            27.0, 
+            8.0
+        ]
+    }, 
+    {
+        "name": "1", 
+        "color": [
+            0, 
+            0, 
+            255
+        ], 
+        "holeList": [], 
+        "height": 0.0, 
+        "points": [
+            [
+                0.0, 
+                19.0
+            ], 
+            [
+                0.0, 
+                11.0
+            ], 
+            [
+                0.0, 
+                0.0
+            ], 
+            [
+                27.0, 
+                0.0
+            ], 
+            [
+                27.0, 
+                12.0
+            ], 
+            [
+                27.0, 
+                18.0
+            ], 
+            [
+                27.0, 
+                29.0
+            ], 
+            [
+                0.0, 
+                29.0
+            ]
+        ], 
+        "position": [
+            322.0, 
+            76.0
+        ], 
+        "type": "poly", 
+        "size": [
+            27.0, 
+            29.0
+        ]
+    }
+]
+
+Transitions: # Region 1 Name, Region 2 Name, Bidirectional transition faces (face1_x1, face1_y1, face1_x2, face1_y2, face2_x1, ...)
+boundary	exit_1_3_2	349.0	94.0	377.0	97.0	375.0	87.0	349.0	88.0	377.0	97.0	375.0	87.0
+boundary	exit_1_3_1	322.0	87.0	297.0	87.0	322.0	95.0	295.0	95.0	295.0	95.0	297.0	87.0
+boundary	1	349.0	76.0	349.0	88.0	322.0	87.0	322.0	76.0	349.0	105.0	322.0	105.0	349.0	94.0	349.0	105.0	349.0	76.0	322.0	76.0	322.0	95.0	322.0	105.0
+exit_1_3_2	1	349.0	94.0	349.0	88.0
+exit_1_3_1	1	322.0	87.0	322.0	95.0
+
