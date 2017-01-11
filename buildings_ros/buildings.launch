@@ -1,10 +1,7 @@
 <launch>
-  <!-- <arg name="world_file"  default="$(env TURTLEBOT_GAZEBO_WORLD_FILE)"/> -->
-  <!-- <arg name="map_file" default="$(env TURTLEBOT_MAP_FILE)"/> -->
-  <arg name="world_file"  default="/home/adrian/ownCloud/uni/Masterarbeit/demo_buildings_2doors_ros/buildings.world
-"/>
-  <arg name="map_file" default="/home/adrian/ownCloud/uni/Masterarbeit/demo_buildings_2doors_ros/buildings_complete.yaml"/>
-  <arg name="custom_param_file" default="/home/adrian/ownCloud/uni/Masterarbeit/demo_buildings_2doors_ros/custom.yaml"/>
+  <arg name="world_file" /> <!-- buildings.world -->
+  <arg name="map_file" /> <!-- buildings_complete.yaml -->
+  <arg name="custom_param_file" /> <!-- custom.yaml -->
 
   <arg name="base"      value="$(optenv TURTLEBOT_BASE kobuki)"/> <!-- create, roomba -->
   <arg name="battery"   value="$(optenv TURTLEBOT_BATTERY /proc/acpi/battery/BAT0)"/>  <!-- /proc/acpi/battery/BAT0 --> 
