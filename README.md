@@ -90,8 +90,8 @@ As an example for the file:
             "0.2_1": "32"
         }
     },
-    ...
-
+    "2": {
+    }
 }
 ```
 The mapping is used when the border to an exit is reached. Since exits have the
