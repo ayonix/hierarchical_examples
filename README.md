@@ -74,6 +74,27 @@ Then, the scenario can be started, again with `python hierarchical.py path/to/to
   turned off
 
 # Specifics
+## Configurations
+The higher level games can all use the same configuration. Only two things are
+of greater importance: First, the MotionControl-Handler should be set to
+`AbstractHandler`, so it actually starst the lower level games. Secondly, the
+PoseHandler has to reflect the choice of simulation. If ROS is used, either the
+`GazeboPoseHandler` or `RosPoseHandler` should be used. In case of the basic
+simulation the corresponding `BasicSimPoseHandler` is to be chosen.
+
+For the games on the lowest level the configuration is different. Instead of
+having the AbstractHandler a handler that actually moves the robot has to be
+chosen. In the case of basicSim, this could be `VectorControllerHandler`
+together with the `BasicSimLocomotionCommandHandler`.
+
+If ROS is used, `MoveBaseMotionHandler` should be used as MotionControlHandler,
+which will use the navigation stack of ROS to move the robot. In addition to
+that difference, it might be also advisable to have a configuration for every
+instance of the lowest level, to increase the accuracy of translating the
+coordinates between ROS/Gazebo and LTLMoP. In order to do this the map should
+contain at least three calibration points, then a wizard can be started from the
+configuration editor to initialize the calibration matrix.
+
 ## mappings.json
 As an example for the file:
 ```json
